@@ -98,6 +98,15 @@ class Noginn_RateLimitTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(3, $rateLimit->getTotalRequests());
     }
 
+    public function testGetTotalRequestsImmediate()
+    {
+        $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 5, 3,
+                $this->_cache);
+        $this->assertEquals(0, $rateLimit->getTotalRequests());
+        $rateLimit->increment();
+        $this->assertEquals(1, $rateLimit->getTotalRequests());
+    }
+
     public function testExceeded()
     {
         $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 1, 1,
@@ -137,8 +146,41 @@ class Noginn_RateLimitTest extends PHPUnit_Framework_TestCase
         $cache->save(2, $rateLimit->getCacheId());
         $this->assertFalse($rateLimit->exceeded());
     }
-}
 
+    public function testGetLimitAndGetPeriod()
+    {
+        $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 5, 3,
+                $this->_cache);
+        $this->assertSame(5, $rateLimit->getLimit());
+        $this->assertSame(3, $rateLimit->getPeriod());
+    }
+
+    public function testSetCache()
+    {
+        $mockCache = $this->getMock('Zend_Cache_Core');
+        $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 5, 3,
+                $mockCache);
+        $this->assertSame($mockCache, $rateLimit->getCache());
+    }
+
+    public function testSetCacheInvalidClass()
+    {
+        $this->setExpectedException('Zend_Exception');
+        $mockCache = $this->getMock('stdClass');
+        $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 5, 3,
+                $mockCache);
+    }
+
+    public function testSetCacheFromRegistry()
+    {
+        $mockCache = $this->getMock('Zend_Cache_Core');
+        $key = 'mockCacheKey_h2h4x347';
+        Zend_Registry::set($key, $mockCache);
+        $rateLimit = new Noginn_RateLimit(array('127.0.0.1', 'action'), 5, 3,
+                $key);
+        $this->assertSame($rateLimit->getCache(), $mockCache);
+    }
+}
 if (PHPUnit_MAIN_METHOD == 'Noginn_RateLimitTest::main') {
     Noginn_RateLimitTest::main();
 }
