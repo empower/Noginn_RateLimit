@@ -152,7 +152,7 @@ class Noginn_RateLimit
      * @param int $interval
      * @return int
      */
-    public function getRequestsForInterval($interval)
+    public function getRequestsForInterval($interval = 0)
     {
         if ($interval < 0 || $interval > $this->_period) {
             return false;
