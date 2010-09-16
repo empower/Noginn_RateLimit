@@ -180,7 +180,7 @@ class Noginn_RateLimit
 
         // Cache the request count
         $this->getCache()->save(
-            $this->_requests[0],
+            (string)$this->_requests[0],
             $this->getCacheId(),
             array(),
             $this->_period * 60
