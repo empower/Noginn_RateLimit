@@ -1,0 +1,15 @@
+<phpunit bootstrap="./tests/TestHelper.php" colors="true" stopOnFailure="true">
+    <testsuite name="Noginn_RateLimit">
+        <file>./tests/Noginn/RateLimitTest.php</file>
+    </testsuite>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">Noginn</directory>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="coverage" charset="UTF-8"
+            yui="true" highlight="true" lowUpperBound="90" highLowerBound="100"/>
+    </logging>
+</phpunit>

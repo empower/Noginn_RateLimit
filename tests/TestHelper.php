@@ -7,17 +7,13 @@ ob_start();
 error_reporting(E_ALL | E_STRICT);
 
 // Set up the include paths
-$rootPath = dirname(dirname(__FILE__));
-$libraryPath = $rootPath . '/library';
-$testsPath = $rootPath . '/tests';
+$libraryPath = dirname(dirname(__FILE__) . '/..');
+$testsPath = $libraryPath . '/tests';
 set_include_path(implode(PATH_SEPARATOR, array($libraryPath, $testsPath, get_include_path())));
 
 // Setup the autoloader
-require_once $libraryPath . '/Zend/Loader/Autoloader.php';
+require_once 'Zend/Loader/Autoloader.php';
 $autoloader = Zend_Loader_Autoloader::getInstance();
 $autoloader->registerNamespace('Noginn_');
 
-// Include the test configuration file
-require_once $testsPath . '/TestConfiguration.php';
-
-unset($rootPath, $libraryPath, $testsPath);
+unset($libraryPath, $testsPath);

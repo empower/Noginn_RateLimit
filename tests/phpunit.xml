@@ -1,5 +1,0 @@
-<phpunit bootstrap="./TestHelper.php" colors="true" stopOnFailure="true">
-    <testsuite name="Noginn_RateLimit">
-        <file>./Noginn/RateLimitTest.php</file>
-    </testsuite>
-</phpunit>
