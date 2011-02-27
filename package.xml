@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.1" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Noginn_RateLimit</name>
+ <channel>empower.github.com/pirum</channel>
+ <summary>A simple rate limiting component for the Zend Framework</summary>
+ <description>This is the empower fork of the project</description>
+ <lead>
+  <name>Bill Shupp</name>
+  <user>shupp</user>
+  <email>hostmaster@shupp.org</email>
+  <active>yes</active>
+ </lead>
+ <date>2011-02-27</date>
+ <time>13:59:36</time>
+ <version>
+  <release>0.1.0</release>
+  <api>0.1.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+ <notes>
+* Initial release
+ </notes>
+ <contents>
+  <dir baseinstalldir="/" name="/">
+   <dir name="example">
+    <dir name="application">
+     <dir name="controllers">
+      <file name="IndexController.php" role="doc" />
+     </dir> <!-- /example/application/controllers -->
+     <dir name="forms">
+      <file name="Login.php" role="doc" />
+     </dir> <!-- /example/application/forms -->
+     <dir name="views">
+      <dir name="scripts">
+       <dir name="index">
+        <file name="account.phtml" role="doc" />
+        <file name="index.phtml" role="doc" />
+       </dir> <!-- /example/application/views/scripts/index -->
+      </dir> <!-- /example/application/views/scripts -->
+     </dir> <!-- /example/application/views -->
+     <file name="Bootstrap.php" role="doc" />
+    </dir> <!-- /example/application -->
+    <dir name="public">
+     <file name="index.php" role="doc" />
+    </dir> <!-- /example/public -->
+   </dir> <!-- /example -->
+   <dir name="Noginn">
+    <file name="RateLimit.php" role="php" />
+   </dir> <!-- /Noginn -->
+   <dir name="tests">
+    <dir name="Noginn">
+     <file name="RateLimitTest.php" role="test" />
+    </dir> <!-- /tests/Noginn -->
+    <file name="TestConfiguration.php.distribution" role="test" />
+    <file name="TestHelper.php" role="test" />
+   </dir> <!-- /tests -->
+   <file name="LICENSE" role="doc" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Zend</name>
+    <channel>zend.googlecode.com/svn</channel>
+    <min>1.11.0</min>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-02-27</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+* Initial release
+   </notes>
+  </release>
+ </changelog>
+</package>
