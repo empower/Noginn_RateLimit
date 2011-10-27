@@ -33,15 +33,15 @@ $packagexml->setSummary('A simple rate limiting component for the Zend Framework
 $packagexml->setDescription('This is the empower fork of the project');
 
 $packagexml->setChannel('empower.github.com/pirum');
-$packagexml->setAPIVersion('0.1.1');
-$packagexml->setReleaseVersion('0.1.1');
+$packagexml->setAPIVersion('0.1.2');
+$packagexml->setReleaseVersion('0.1.2');
 
 $packagexml->setReleaseStability('alpha');
 
 $packagexml->setAPIStability('alpha');
 
 $packagexml->setNotes('
-* Updated ZF dependency
+* Updated ZF dependency again
 ');
 $packagexml->setPackageType('php');
 $packagexml->addRelease();
@@ -58,7 +58,7 @@ $packagexml->setLicense('MIT License',
 
 $packagexml->setPhpDep('5.0.0');
 $packagexml->setPearinstallerDep('1.4.0b1');
-$packagexml->addPackageDepWithChannel('required', 'zf', 'pear.zfcampus.org', '1.11.10');
+$packagexml->addPackageDepWithChannel('required', 'Zend', 'empower.github.com/pirum', '1.11.11');
 
 $packagexml->generateContents();
 $packagexml->writePackageFile();

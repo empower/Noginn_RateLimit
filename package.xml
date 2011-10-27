@@ -13,11 +13,11 @@
   <email>hostmaster@shupp.org</email>
   <active>yes</active>
  </lead>
- <date>2011-08-29</date>
- <time>10:12:39</time>
+ <date>2011-10-27</date>
+ <time>12:53:28</time>
  <version>
-  <release>0.1.1</release>
-  <api>0.1.1</api>
+  <release>0.1.2</release>
+  <api>0.1.2</api>
  </version>
  <stability>
   <release>alpha</release>
@@ -25,7 +25,7 @@
  </stability>
  <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
  <notes>
-* Updated ZF dependency
+* Updated ZF dependency again
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -73,9 +73,9 @@
     <min>1.4.0b1</min>
    </pearinstaller>
    <package>
-    <name>zf</name>
-    <channel>pear.zfcampus.org</channel>
-    <min>1.11.10</min>
+    <name>Zend</name>
+    <channel>empower.github.com/pirum</channel>
+    <min>1.11.11</min>
    </package>
   </required>
  </dependencies>
@@ -109,6 +109,21 @@
    <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
    <notes>
 * Updated ZF dependency
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.2</release>
+    <api>0.1.2</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2011-10-27</date>
+   <license uri="http://www.opensource.org/licenses/mit-license.php">MIT License</license>
+   <notes>
+* Updated ZF dependency again
    </notes>
   </release>
  </changelog>
